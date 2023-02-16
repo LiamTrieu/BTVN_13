@@ -1,0 +1,153 @@
+<div class="container">
+  <h3 class="text-center">Sinh Vien</h3>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Id</label>
+    <input type="text" class="form-control" ng-model="detailSV.id" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"
+      >Ma sinh vien</label
+    >
+    <input type="text" class="form-control" ng-model="detailSV.maSV" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Ten</label>
+    <input type="text" class="form-control" ng-model="detailSV.ten" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Can nang</label>
+    <input type="text" class="form-control" ng-model="detailSV.canNang" />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Loai</label>
+    <select class="form-select" ng-model="detailSV.loai">
+      <option value="{{sv.loai}}" ng-repeat="sv in dsSinhVien">
+        {{sv.loai}}
+      </option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Gioi Tinh: </label>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        ng-value="true"
+        ng-model="detailSV.gioiTinh" />
+      <label class="form-check-label" for="inlineRadio1">Nam</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        ng-value="false"
+        ng-model="detailSV.gioiTinh" />
+      <label class="form-check-label" for="inlineRadio2">Nu</label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"
+      >Chuyen Nganh:
+    </label>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        value="UDPM"
+        ng-model="detailSV.chuyenNganh" />
+      <label class="form-check-label" for="inlineRadio1">UDPM</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        value="WEB"
+        ng-model="detailSV.chuyenNganh" />
+      <label class="form-check-label" for="inlineRadio2">WEB</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="radio"
+        value="Moblie"
+        ng-model="detailSV.chuyenNganh" />
+      <label class="form-check-label" for="inlineRadio2">Moblie</label>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">So thich: </label>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        ng-checked="detailSV.soThich.indexOf('Di choi') > -1" />
+      <label class="form-check-label" for="inlineCheckbox1">Di choi</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        ng-checked="detailSV.soThich.indexOf('Xem phim') > -1" />
+      <label class="form-check-label" for="inlineCheckbox1">Xem phim</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        ng-checked="detailSV.soThich.indexOf('Choi game') > -1" />
+      <label class="form-check-label" for="inlineCheckbox1">Choi game</label>
+    </div>
+    <br />
+    <br />
+    <a type="button" class="btn btn-success">Add</a>
+    <a type="button" class="btn btn-success">Update</a>
+    <br />
+    <br />
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Ma SV</th>
+          <th scope="col">Ten</th>
+          <th scope="col">Can nang</th>
+          <th scope="col">Loai</th>
+          <th scope="col">Gioi Tinh</th>
+          <th scope="col">Chuyen Nganh</th>
+          <th scope="col">So thich</th>
+          <th scope="col">Function</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="sv in dsSinhVien">
+          <th scope="row">{{sv.id}}</th>
+          <th scope="row">{{sv.maSV}}</th>
+          <th scope="row">{{sv.ten}}</th>
+          <th scope="row">{{sv.canNang}}</th>
+          <th scope="row">{{sv.loai}}</th>
+          <th scope="row" ng-if="sv.gioiTinh">Nam</th>
+          <th scope="row" ng-if="!sv.gioiTinh">Nu</th>
+          <th scope="row">{{sv.chuyenNganh}}</th>
+          <th scope="row">
+            <span ng-repeat="st in sv.soThich"
+              >{{st}}<span ng-if="!$last">,</span>
+            </span>
+          </th>
+          <th scope="row">
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Basic mixed styles example">
+              <a
+                href="#/sinh-vien/{{sv.id}}"
+                type="button"
+                class="btn btn-success"
+                >Xem</a
+              >
+              <a type="button" class="btn btn-danger">Xoa</a>
+            </div>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
