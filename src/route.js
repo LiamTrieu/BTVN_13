@@ -10,9 +10,21 @@ app.config(function ($routeProvider, $locationProvider) {
       templateUrl: "pages/sinh-vien.html",
       controller: sinhVienCtrl,
     })
-    .when("/sinh-vien/:id", {
+    .when("/sinh-vien/add", {
+      templateUrl: "pages/sinh-vien.html",
+      controller: addSV,
+    })
+    .when("/sinh-vien/:maSV", {
       templateUrl: "pages/sinh-vien.html",
       controller: detailSV,
+    })
+    .when("/sinh-vien/:maSV/edit", {
+      templateUrl: "pages/sinh-vien.html",
+      controller: updateSV,
+    })
+    .when("/sinh-vien/:maSV/remove", {
+      templateUrl: "pages/sinh-vien.html",
+      controller: removeSV,
     })
     .when("/gioi-thieu", { templateUrl: "pages/gioi-thieu.html" })
     .otherwise("/trang-chu");

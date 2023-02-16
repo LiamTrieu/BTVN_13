@@ -1,34 +1,35 @@
 {
   "sinhVien": [
     {
-      "ten": "ten 1",
-      "canNang": 32,
-      "loai": "loai 1",
-      "gioiTinh": false,
-      "chuyenNganh": "UDPM",
-      "soThich": ["Di choi", "Choi game"],
-      "maSV": "maSV 1",
-      "id": "1"
-    },
-    {
-      "ten": "ten 2",
-      "canNang": 45,
+      "ten": "Nguyen Van A",
+      "canNang": "69",
       "loai": "loai 2",
       "gioiTinh": true,
       "chuyenNganh": "WEB",
-      "soThich": ["Di choi", "Xem phim"],
-      "maSV": "maSV 2",
-      "id": "2"
+      "soThich": [
+        "Di choi",
+        "Xem phim"
+      ],
+      "maSV": "SV01",
+      "id": "1"
+    }
+  ],
+  "loai": [
+    {
+      "id": 1,
+      "name": "loai 1"
     },
     {
-      "ten": "ten 3",
-      "canNang": 34,
-      "loai": "loai 3",
-      "gioiTinh": false,
-      "chuyenNganh": "Mobile",
-      "soThich": ["Xem phim", "Choi game"],
-      "maSV": "maSV 3",
-      "id": "3"
+      "id": 2,
+      "name": "loai 2"
+    },
+    {
+      "id": 3,
+      "name": "loai 3"
+    },
+    {
+      "id": 4,
+      "name": "loai 4"
     }
   ]
 }
